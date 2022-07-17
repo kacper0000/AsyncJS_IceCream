@@ -1,0 +1,42 @@
+let stocks = {
+    fruits : ['grape', 'stawberry', 'banana', 'mango'],
+    liquid : ['water', 'ice', 'sorbet'],
+    holder : ['cone', 'sticks', 'cup', 'jug'],
+    toppings : ['chocolate', 'dried figs', 'walnuts', 'almonds']
+    
+}
+
+let order = (fruitName, containerChoice, topChoice,  call_production) => {
+    setTimeout(() => {
+        console.log(`${stocks.fruits[fruitName]} was selected`);
+        call_production(containerChoice, topChoice);
+        }, 2000);
+    
+};
+
+let production = (containerChoice, topChoice) => {
+    setTimeout(() => {
+        console.log('Production has started');
+        setTimeout(() => {
+            console.log('Selected fruits has been chopped');
+            setTimeout(() => {
+                console.log(`${stocks.liquid[0]} and ${stocks.liquid[1] } was added`);
+                 setTimeout(() => {
+                     console.log('machine was started');
+                     setTimeout(() => {
+                         console.log(`${ stocks.holder[containerChoice] } was selected as a container`);
+                         setTimeout(() => {
+                             console.log(`${ stocks.toppings[topChoice] } was selected as a container`);
+                            setTimeout(() => {
+                                console.log('Ice cream was done and served.');
+                         
+                                }, 2000);
+                            }, 3000);
+                        }, 2000);
+                     }, 1000);
+                }, 1000);
+             }, 2000);
+        }, 0);
+};
+
+order(1, 2, 3, production)
