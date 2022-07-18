@@ -9,7 +9,7 @@ let isShopOpen = true;
 
 let order = ( time, work ) => {
   return new Promise( ( resolve, reject )=>{
-    if( is_shop_open ){
+    if( isShopOpen ){
       setTimeout(()=>{
        // work is 👇 getting done here
         resolve( work() )
